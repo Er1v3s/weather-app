@@ -1,0 +1,22 @@
+{
+  "name": "weather-app",
+  "version": "1.0.0",
+  "description": "A JavaScript project",
+  "main": "./dist/index.js",
+  "scripts": {
+    "start": "node ./node_modules/parcel-bundler/bin/cli serve ./public/index.html --port 8080",
+    "build": "node ./node_modules/parcel-bundler/bin/cli build ./public/index.html --out-dir ./dist/"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^8.33.0",
+    "prettier": "^2.8.3",
+    "parcel-bundler": "^1.12.5"
+  }
+}
