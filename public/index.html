@@ -6,17 +6,53 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>A JavaScript project</title>
   <link href="../public/tailwind-output.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+    integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
 
-  <h1 class="text-3xl font-bold underline">Hello world!</h1>
+  <div id="app">
+    <div class="absolute top-0 bottom-0 w-full h-full overflow-hidden">
 
-  <div id="app"></div>
+      <!-- <div id="time" class="w-screen">20:20</div> -->
 
-  <!-- <video autoplay loop muted plays-inline class="">
-    <source src="assets/sunny.mp4" type="video/mp4">
-  </video> -->
+      <div id="container" class="absolute w-20 left-10 bottom-10">
+        <div id="city"></div>
+        <div id="country"></div>
+        <div id="temperature"></div>
+        <div id="weather"></div>
+        <div id="humidity"></div>
+        <div id="windSpeed"></div>
+        <div id="sunrise"></div>
+        <div id="sunset"></div>
+      </div>
+
+
+
+      <div class="flex absolute w-screen justify-center bottom-5 h-20">
+        <div class="relative p-3 h-20 backdrop-blur-sm w-[90%] max-w-md bg-white/50 z-40 rounded-3xl">
+        </div>
+      </div>
+
+      <div class="flex absolute w-screen justify-center bottom-5 h-20 z-50">
+        <div class="flex justify-center relative p-5 rounded-x z-10">
+          <div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-[10%]">
+            <span class="text-zinc-700 text-2xl"><i class="fa-solid fa-magnifying-glass"></i></span>
+          </div>
+          <input type="text"
+            class="block w-[90%] text-center text-4xl bg-transparent border-b-2 border-zinc-700 placeholder-zinc-700"
+            placeholder="Search">
+        </div>
+      </div>
+
+      <video autoplay loop muted plays-inline class="absolute w-screen h-screen -z-50 object-cover">
+        <source src="assets/rainy-640.mp4" type="video/mp4">
+      </video>
+    </div>
+
+  </div>
 
   <script src="../src/main.js"></script>
 </body>
