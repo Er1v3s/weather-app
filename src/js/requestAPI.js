@@ -1,0 +1,48 @@
+import config from "./config";
+
+const API_KEY = config.API_KEY;
+const QUERRY = "Wrocław";
+const API = `https://api.openweathermap.org/data/2.5/weather?q=${QUERRY}&appid=${API_KEY}&units=metric`;
+
+let APIresponse = {};
+
+async function getWeather() {
+  await fetch(API)
+    .then((response) => {
+      if (response.ok) {
+        return response;
+      } else {
+        throw new Error(`${response.status} ${response.statusText}`);
+      }
+    })
+    .then((response) => response.json())
+    .then((data) => {
+      if (data.length < 0) {
+        throw new Error("There's no available data for your searching");
+      } else {
+        const time = new Date().toLocaleString();
+        APIresponse = {
+          err: false,
+          time: time,
+          city: data.name,
+          country: data.sys.country,
+          temperature: Math.floor(data.main.temp),
+          weather: data.weather[0].main,
+          humidity: data.main.humidity,
+          windSpeed: Math.floor(data.wind.speed),
+          sunrise: data.sys.sunrise,
+          sunset: data.sys.sunset,
+        };
+      }
+    })
+    .catch((err) => {
+      APIresponse = {
+        err: true,
+        message: err.message,
+      };
+    });
+
+  return APIresponse;
+}
+
+export default getWeather;
