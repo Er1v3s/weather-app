@@ -60,6 +60,9 @@ typings/
 # next.js build output
 .next
 
+# my git gitignore
+
 dist
 .cache
 tailwind-output.css
+config.js
