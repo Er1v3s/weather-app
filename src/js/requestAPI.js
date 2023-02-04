@@ -4,9 +4,8 @@ const API_KEY = config.API_KEY;
 const QUERRY = "Wrocław";
 const API = `https://api.openweathermap.org/data/2.5/weather?q=${QUERRY}&appid=${API_KEY}&units=metric`;
 
-let APIresponse = {};
-
 async function getWeather() {
+  let APIresponse = {};
   await fetch(API)
     .then((response) => {
       if (response.ok) {
@@ -30,8 +29,8 @@ async function getWeather() {
           weather: data.weather[0].main,
           humidity: data.main.humidity,
           windSpeed: Math.floor(data.wind.speed),
-          sunrise: data.sys.sunrise,
-          sunset: data.sys.sunset,
+          sunrise: new Date(data.sys.sunrise * 1000).toLocaleTimeString(),
+          sunset: new Date(data.sys.sunset * 1000).toLocaleTimeString(),
         };
       }
     })
