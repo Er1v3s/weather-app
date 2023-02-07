@@ -26,11 +26,17 @@ async function getWeather() {
           city: data.name,
           country: data.sys.country,
           temperature: Math.floor(data.main.temp),
-          weather: data.weather[0].main,
+          weather: data.weather[0].id,
           humidity: data.main.humidity,
           windSpeed: Math.floor(data.wind.speed),
-          sunrise: new Date(data.sys.sunrise * 1000).toLocaleTimeString(),
-          sunset: new Date(data.sys.sunset * 1000).toLocaleTimeString(),
+          sunrise: new Date(data.sys.sunrise * 1000).toLocaleTimeString([], {
+            hour: "2-digit",
+            minute: "2-digit",
+          }),
+          sunset: new Date(data.sys.sunset * 1000).toLocaleTimeString([], {
+            hour: "2-digit",
+            minute: "2-digit",
+          }),
         };
       }
     })
