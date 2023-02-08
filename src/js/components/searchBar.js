@@ -18,12 +18,12 @@ const SearchBar = () => {
         <div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-[5%]">
         <span class="text-zinc-800 text-xl lg:text-2xl"><i class="fa-solid fa-magnifying-glass"></i></span>
         </div>
-        <input type="text"
-            class="block w-[90%] text-center text-2xl bg-transparent border-b-2 border-zinc-800 placeholder-zinc-700 focus:outline-none lg:text-4xl" placeholder="Search">
+          <input id="search" type="text"
+          class="block w-[90%] text-center text-2xl bg-transparent border-b-2 border-zinc-800 placeholder-zinc-700 focus:outline-none lg:text-4xl" placeholder="Search">
     </div>
   `;
 
   app.appendChild(searchBar);
 };
 
-export default SearchBar;
+export { SearchBar };
