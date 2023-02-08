@@ -1,8 +1,16 @@
-import getWeather from "./requestAPI";
+import { getWeather } from "./requestAPI.js";
+import { attachData } from "./attachData.js";
+import { Video } from "./components/Video.js";
+import { Widgets } from "./components/Widgets.js";
+import { TimeDate } from "./components/TimeDate.js";
+import { VidmoWidget } from "./components/VidmoWidget";
+import { animate } from "./animation.js";
+import { Cloack } from "./cloack.js";
 
-const APIresponse = getWeather();
+let QUERRY = "Warszawa";
+let APIresponse = getWeather(QUERRY);
 
-const fetchingData = new Promise((resolve, reject) => {
+let fetchingData = new Promise((resolve, reject) => {
   resolve(APIresponse);
   reject(
     new Error(
@@ -11,4 +19,38 @@ const fetchingData = new Promise((resolve, reject) => {
   );
 });
 
-export default fetchingData;
+window.addEventListener("DOMContentLoaded", () => {
+  const searchInput = document.querySelector("#search");
+  searchInput.addEventListener("keydown", (e) => {
+    if (e.keyCode === 13) {
+      e.preventDefault();
+      QUERRY = e.target.value;
+      APIresponse = getWeather(QUERRY);
+      fetchingData = new Promise((resolve, reject) => {
+        resolve(APIresponse);
+        reject(
+          new Error(
+            "Something went wrong, check your entered data and try one more time "
+          )
+        );
+      });
+
+      if (document.querySelector(".widget") !== null) {
+        const widgets = document.querySelectorAll(".widget");
+        widgets.forEach((widget) => {
+          widget.remove();
+        });
+      }
+
+      Video();
+      TimeDate();
+      Cloack();
+      Widgets();
+      VidmoWidget();
+      attachData();
+      setTimeout(animate, 2000);
+    }
+  });
+});
+
+export { fetchingData };
