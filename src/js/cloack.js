@@ -13,4 +13,4 @@ const Cloack = () => {
   setInterval(cloack, 1000);
 };
 
-export default Cloack;
+export { Cloack };
