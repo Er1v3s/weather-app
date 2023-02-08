@@ -1,10 +1,10 @@
-import config from "./config";
+import { config } from "./config.js";
 
 const API_KEY = config.API_KEY;
-const QUERRY = "Wrocław";
-const API = `https://api.openweathermap.org/data/2.5/weather?q=${QUERRY}&appid=${API_KEY}&units=metric`;
 
-async function getWeather() {
+async function getWeather(QUERRY) {
+  let API = `https://api.openweathermap.org/data/2.5/weather?q=${QUERRY}&appid=${API_KEY}&units=metric`;
+
   let APIresponse = {};
   await fetch(API)
     .then((response) => {
@@ -50,4 +50,4 @@ async function getWeather() {
   return APIresponse;
 }
 
-export default getWeather;
+export { getWeather };
