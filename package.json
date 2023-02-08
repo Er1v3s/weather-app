@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "A JavaScript project",
   "main": "./dist/index.js",
+  "type": "commonjs",
   "scripts": {
     "tailwatch": "npx tailwindcss -i ./src/tailwind.css -o ./public/tailwind-output.css --watch",
     "start": "node ./node_modules/parcel-bundler/bin/cli serve ./public/index.html --port 8080",
@@ -18,7 +19,11 @@
   "devDependencies": {
     "eslint": "^8.33.0",
     "parcel-bundler": "^1.12.5",
+    "parcel-plugin-static-files-copy": "^2.6.0",
     "prettier": "^2.8.3",
     "tailwindcss": "^3.2.4"
+  },
+  "staticFiles": {
+    "staticPath": "public/assets"
   }
 }
