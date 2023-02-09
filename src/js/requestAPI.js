@@ -2,8 +2,8 @@ import { config } from "./config.js";
 
 const API_KEY = config.API_KEY;
 
-async function getWeather(QUERRY) {
-  let API = `https://api.openweathermap.org/data/2.5/weather?q=${QUERRY}&appid=${API_KEY}&units=metric`;
+const getWeather = async (QUERRY) => {
+  const API = `https://api.openweathermap.org/data/2.5/weather?q=${QUERRY}&appid=${API_KEY}&units=metric`;
 
   let APIresponse = {};
   await fetch(API)
@@ -48,6 +48,6 @@ async function getWeather(QUERRY) {
     });
 
   return APIresponse;
-}
+};
 
 export { getWeather };
