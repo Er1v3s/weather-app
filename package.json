@@ -8,7 +8,7 @@
   "scripts": {
     "tailwatch": "npx tailwindcss -i ./src/tailwind.css -o ./public/tailwind-output.css --watch",
     "start": "node ./node_modules/parcel-bundler/bin/cli serve ./public/index.html --port 8080",
-    "build": "node ./node_modules/parcel-bundler/bin/cli build ./public/index.html --out-dir ./dist/",
+    "build": "node ./node_modules/parcel-bundler/bin/cli build ./public/index.html --out-dir dist --public-url ./",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist"
   },
