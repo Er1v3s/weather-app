@@ -11,30 +11,37 @@ const attachData = () => {
 
   fetchingData
     .then((data) => {
-      city.innerHTML = data.city;
-      country.innerHTML = data.country;
-      temperature.innerHTML = `
+      if (data.err === false) {
+        city.innerHTML = data.city;
+        country.innerHTML = data.country;
+        temperature.innerHTML = `
         <i class="fa-solid fa-temperature-three-quarters"></i>
         &nbsp;${data.temperature}&#8451;`;
-      humidity.innerHTML = `
+        humidity.innerHTML = `
         <i class="fa-solid fa-droplet"></i>
         <span>&nbsp;${data.humidity}&#37;</span>
         `;
-      windSpeed.innerHTML = `
+        windSpeed.innerHTML = `
         <i class="fa-solid fa-wind"></i>
         <span>&nbsp;${data.windSpeed}<small>m/s</small></span>
         `;
-      sunrise.innerHTML = `
+        sunrise.innerHTML = `
         <i class="fa-solid fa-sun"></i>
         <span>&nbsp;${data.sunrise}</span>
         `;
-      sunset.innerHTML = `
+        sunset.innerHTML = `
         <i class="fa-solid fa-moon"></i>
         <span>&nbsp;${data.sunset}</span>
         `;
+      } else {
+        throw new Error(data.message);
+      }
     })
     .catch((err) => {
-      console.log(err.message);
+      console.error(
+        err.message +
+          " | Something went wrong trying displaying widgets, check your entered data and try one more time"
+      );
     });
 };
 
