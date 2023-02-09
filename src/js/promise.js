@@ -46,7 +46,12 @@ window.addEventListener("DOMContentLoaded", () => {
           attachData();
           setTimeout(animate, 2000);
         } else {
-          Popup();
+          const popup = document.querySelector("#popup");
+          if (popup === null) {
+            Popup();
+          } else {
+            return;
+          }
         }
       });
     }
