@@ -8,6 +8,10 @@ In the project directory run scripts:
 
 ### `npm start`
 
+### `npm run tailwatch`
+
+(_without the `tailwatch` script, the styles will not be loaded on page_)
+
 Runs the app in the development mode.\
 Open [http://localhost:8080](http://localhost:8080) to view it in your browser.
 
