@@ -1,2 +1,2 @@
 .widget{scale:0;animation:ShowWidget 2s}.animated{scale:1!important;transform:translateY(0)!important}.widget:first-child{animation-delay:.3s}.widget:nth-child(2){animation-delay:.6s}.widget:nth-child(3){animation-delay:.9s}.widget:nth-child(4){animation-delay:1.2s}.widget:nth-child(5){animation-delay:1.5s}.widget:nth-child(6){animation-delay:1.8s}.searchBar{transform:translateY(200px);animation:searchBarAnimation 1.5s ease-in-out;animation-delay:1.8s}@keyframes ShowWidget{0%{scale:0}50%{scale:1.05}to{scale:1}}@keyframes searchBarAnimation{0%{transform:translateY(200px)}75%{transform:translateY(-25px)}to{transform:translateY(0)}}
-/*# sourceMappingURL=/animations.90d48bbf.css.map */
+/*# sourceMappingURL=animations.90d48bbf.css.map */

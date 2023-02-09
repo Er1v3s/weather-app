@@ -27,4 +27,4 @@ parcelRequire=function(e,r,t,n){var i,o="function"==typeof parcelRequire&&parcel
 },{}],"WSmw":[function(require,module,exports) {
 "use strict";var e=require("./js/components/SearchBar.js"),t=require("./js/components/TimeDate.js"),i=require("./js/components/Widgets.js"),s=require("./js/components/VidmoWidget.js"),r=require("./js/components/Video.js"),n=require("./js/components/WidgetContainer.js"),a=require("./js/cloack.js"),o=require("./js/attachData.js"),j=require("./js/animation.js");document.addEventListener("DOMContentLoaded",function(){(0,r.Video)(),(0,n.WidgetContainer)(),(0,t.TimeDate)(),(0,a.Calendar)(),(0,a.Clock)(),(0,i.Widgets)(),(0,s.VidmoWidget)(),(0,o.attachData)(),(0,e.SearchBar)(),setTimeout(j.animate,2e3)});
 },{"./js/components/SearchBar.js":"hCrQ","./js/components/TimeDate.js":"AxC3","./js/components/Widgets.js":"bWkS","./js/components/VidmoWidget.js":"CVSA","./js/components/Video.js":"SIJR","./js/components/WidgetContainer.js":"aZ2f","./js/cloack.js":"hFHG","./js/attachData.js":"yJsp","./js/animation.js":"mS4d"}]},{},["WSmw"], null)
-//# sourceMappingURL=/main.1460247a.js.map
+//# sourceMappingURL=main.1460247a.js.map
