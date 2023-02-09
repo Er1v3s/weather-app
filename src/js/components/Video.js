@@ -1,8 +1,6 @@
 import { fetchingData } from "../promise.js";
 
-const Video = async () => {
-  const app = document.getElementById("app");
-
+const Video = () => {
   const windowX = window.innerWidth;
   let size;
 
@@ -12,15 +10,9 @@ const Video = async () => {
     size = 1920;
   }
 
-  const video = document.createElement("video");
-  video.setAttribute("autoplay", "");
-  video.setAttribute("loop", "loop");
-  video.setAttribute("muted", "muted");
-  video.setAttribute("playsinline", "playinline");
-  video.setAttribute("preload", "preload");
-  video.setAttribute("class", "absolute w-screen h-screen -z-50 object-cover");
+  const video = document.querySelector("video");
 
-  await fetchingData
+  fetchingData
     .then((data) => {
       let weather = "";
       if (data.err === false) {
@@ -50,8 +42,6 @@ const Video = async () => {
           " | Something went wrong trying displaying background video, check your entered data and try one more time"
       );
     });
-
-  app.appendChild(video);
 };
 
 export { Video };

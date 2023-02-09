@@ -30,11 +30,6 @@ window.addEventListener("DOMContentLoaded", () => {
             });
           }
 
-          if (document.querySelector("video") !== null) {
-            const video = document.querySelector("video");
-            video.remove();
-          }
-
           QUERRY = e.target.value;
           e.target.value = "";
           QUERRY = QUERRY.trim();
