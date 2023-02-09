@@ -8,16 +8,7 @@ import { animate } from "./animation.js";
 import { Clock, Calendar } from "./cloack.js";
 
 let QUERRY = "Warszawa";
-let APIresponse = getWeather(QUERRY);
-
-let fetchingData = new Promise((resolve, reject) => {
-  resolve(APIresponse);
-  reject(
-    new Error(
-      "Something went wrong, check your entered data and try one more time "
-    )
-  );
-});
+let fetchingData = getWeather(QUERRY);
 
 window.addEventListener("DOMContentLoaded", () => {
   const searchInput = document.querySelector("#search");
@@ -25,15 +16,7 @@ window.addEventListener("DOMContentLoaded", () => {
     if (e.keyCode === 13) {
       e.preventDefault();
       QUERRY = e.target.value;
-      APIresponse = getWeather(QUERRY);
-      fetchingData = new Promise((resolve, reject) => {
-        resolve(APIresponse);
-        reject(
-          new Error(
-            "Something went wrong, check your entered data and try one more time "
-          )
-        );
-      });
+      fetchingData = getWeather(QUERRY);
 
       if (document.querySelector(".widget") !== null) {
         const widgets = document.querySelectorAll(".widget");
