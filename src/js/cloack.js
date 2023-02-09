@@ -1,16 +1,24 @@
-const Cloack = () => {
-  const time = document.getElementById("time");
-  function cloack() {
+const Calendar = () => {
+  const date = document.querySelector("#date");
+  const currentDate = new Date();
+  date.innerHTML = currentDate.toLocaleString([], {
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+  });
+};
+
+const Clock = () => {
+  const time = document.getElementById("clock");
+  const clock = () => {
     const date = new Date();
     time.innerHTML = date.toLocaleString([], {
-      year: "numeric",
-      month: "2-digit",
-      day: "2-digit",
       hour: "2-digit",
       minute: "2-digit",
     });
-  }
-  setInterval(cloack, 1000);
+  };
+  clock();
+  setInterval(clock, 1000);
 };
 
-export { Cloack };
+export { Clock, Calendar };

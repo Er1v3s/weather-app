@@ -5,7 +5,7 @@ import { Widgets } from "./components/Widgets.js";
 import { TimeDate } from "./components/TimeDate.js";
 import { VidmoWidget } from "./components/VidmoWidget";
 import { animate } from "./animation.js";
-import { Cloack } from "./cloack.js";
+import { Clock, Calendar } from "./cloack.js";
 
 let QUERRY = "Warszawa";
 let APIresponse = getWeather(QUERRY);
@@ -44,7 +44,8 @@ window.addEventListener("DOMContentLoaded", () => {
 
       Video();
       TimeDate();
-      Cloack();
+      Calendar();
+      Clock();
       Widgets();
       VidmoWidget();
       attachData();

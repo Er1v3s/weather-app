@@ -7,7 +7,7 @@ import { Video } from "./js/components/Video.js";
 import { WidgetContainer } from "./js/components/WidgetContainer.js";
 
 // scripts
-import { Cloack } from "./js/cloack.js";
+import { Clock, Calendar } from "./js/cloack.js";
 import { attachData } from "./js/attachData.js";
 import { animate } from "./js/animation.js";
 
@@ -15,10 +15,11 @@ document.addEventListener("DOMContentLoaded", () => {
   Video();
   WidgetContainer();
   TimeDate();
-  Cloack();
-  SearchBar();
+  Calendar();
+  Clock();
   Widgets();
-  attachData();
   VidmoWidget();
+  attachData();
+  SearchBar();
   setTimeout(animate, 2000);
 });
